@@ -1,11 +1,20 @@
-
-import './App.css';
+import { ToastContainer } from "react-toastify";
+import "./App.css";
+import AppRouter from "./routers/AppRouter";
+import { Provider } from "react-redux";
+import store, { persistor } from "./app/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <AppRouter />
+        </PersistGate>
+      </Provider>
+      <ToastContainer />
+    </>
   );
 }
 

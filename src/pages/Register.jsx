@@ -24,7 +24,7 @@ const Register = () => {
       ),
   });
   return (
-    <section className="h-[90vh] flex items-center justify-center">
+    <section className="min-h-[90vh] flex items-center justify-center">
       <div className="container h-full px-6 py-12 ">
         <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
@@ -64,10 +64,16 @@ const Register = () => {
                     <p className="m-5 font-semibold text-3xl">REGISTER</p>
                   </div>
                   {/* Username input */}
-                  <div className="relative mb-6" data-te-input-wrapper-init>
+                  <div className="relative mb-6" >
+                    <label
+                      htmlFor="username"
+                      className="pointer-events-none p-1 max-w-[90%] text-primary dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+                    >
+                      Username
+                    </label>
                     <Field
                       type="text"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="username"
                       name="username"
                       value={values?.username || ""}
@@ -75,12 +81,6 @@ const Register = () => {
                       onBlur={handleBlur}
                     />
 
-                    <label
-                      htmlFor="username"
-                      className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-                    >
-                      Username
-                    </label>
                     <ErrorMessage
                       component="p"
                       className="text-red-500 text-xs italic ml-3"
@@ -89,21 +89,22 @@ const Register = () => {
                   </div>
                   {/* Email input */}
                   <div className="relative mb-6" data-te-input-wrapper-init>
+                  <label
+                      htmlFor="email"
+                      className="pointer-events-none p-1 max-w-[90%] text-primary dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+                    >
+                      Email
+                    </label>
                     <Field
                       type="email"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="email"
                       name="email"
                       value={values?.email || ""}
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />
-                    <label
-                      htmlFor="email"
-                      className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-                    >
-                      Email
-                    </label>
+
                     <ErrorMessage
                       component="p"
                       className="text-red-500 text-xs italic ml-3"
@@ -112,9 +113,15 @@ const Register = () => {
                   </div>
                   {/* Image input */}
                   <div className="relative mb-6" data-te-input-wrapper-init>
+                  <label
+                      htmlFor="image"
+                      className="pointer-events-none p-1 max-w-[90%] text-primary dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+                    >
+                      Image
+                    </label>
                     <Field
                       type="url"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="image"
                       name="image"
                       value={values?.image || ""}
@@ -122,12 +129,7 @@ const Register = () => {
                       onBlur={handleBlur}
                     />
 
-                    <label
-                      htmlFor="image"
-                      className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-                    >
-                      Image
-                    </label>
+
                     <ErrorMessage
                       component="p"
                       className="text-red-500 text-xs italic ml-3"
@@ -136,9 +138,15 @@ const Register = () => {
                   </div>
                   {/* Bio input */}
                   <div className="relative mb-6" data-te-input-wrapper-init>
+                  <label
+                      htmlFor="bio"
+                      className="pointer-events-none p-1 max-w-[90%] text-primary dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+                    >
+                      Bio
+                    </label>
                     <Field
                       type="text"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="bio"
                       name="bio"
                       value={values?.bio || ""}
@@ -146,30 +154,26 @@ const Register = () => {
                       onBlur={handleBlur}
                     />
 
-                    <label
-                      htmlFor="bio"
-                      className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-                    >
-                      Bio
-                    </label>
+
                   </div>
                   {/* Password input */}
                   <div className="relative mb-6" data-te-input-wrapper-init>
+                  <label
+                      htmlFor="password"
+                      className="pointer-events-none p-1 max-w-[90%] text-primary dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+                    >
+                      Password
+                    </label>
                     <Field
                       type="password"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="password"
                       name="password"
                       value={values?.password || ""}
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />
-                    <label
-                      htmlFor="password"
-                      className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-                    >
-                      Password
-                    </label>
+
                     <ErrorMessage
                       component="p"
                       className="text-red-500 text-xs italic ml-3"

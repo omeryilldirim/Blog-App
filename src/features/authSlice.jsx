@@ -5,6 +5,7 @@ const authSlice = createSlice({
 
   initialState: {
     currentUser: null,
+    email: null,
     loading: false,
     error: false,
     token: null,
@@ -22,6 +23,7 @@ const authSlice = createSlice({
       state.token = payload?.key;
       state.image = payload?.user?.image;
       state.bio = payload?.user?.bio;
+      state.email = payload?.user?.email;
     },
     logoutSuccess: (state) => {
       state.loading = false;
@@ -29,6 +31,7 @@ const authSlice = createSlice({
       state.token = null;
       state.image=null
       state.bio=null
+      state.email=null
     },
     registerSuccess: (state, { payload }) => {
       state.loading = false;
@@ -37,6 +40,7 @@ const authSlice = createSlice({
       state.error = false;
       state.image = payload?.image;
       state.bio = payload?.bio;
+      state.email = payload?.email;
     },
     fetchFail: (state) => {
       state.loading = false;

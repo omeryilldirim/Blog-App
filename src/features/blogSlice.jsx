@@ -1,0 +1,32 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const blogSlice = createSlice({
+    name:"blog",
+    initialState:{
+        blogs:[],
+        categories:[],
+        loading:false,
+        error:false
+    },
+    reducers:{
+        fetchStart:(state)=>{
+            state.loading = true
+            state.error = false
+        },
+        getBlogsSuccess:(state,{payload})=>{
+            state.loading = false
+            state.blogs = payload
+        },
+        getCategoriesSuccess:(state,{payload})=>{
+            state.loading = false
+            state.categories = payload
+        },
+        fetchFail:(state)=>{
+            state.loading = false
+            state.error = true
+        }
+    }
+})
+
+export const {fetchStart,getBlogsSuccess,getCategoriesSuccess,fetchFail} = blogSlice.actions
+export default blogSlice.reducer

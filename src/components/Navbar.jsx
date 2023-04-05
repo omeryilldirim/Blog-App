@@ -8,17 +8,17 @@ const Navbar = () => {
   const { currentUser,image } = useSelector((state) => state.auth);
   return (
     <nav
-      className="flex-no-wrap relative flex w-full items-center justify-between bg-neutral-100 py-4 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start"
+      className="flex-no-wrap relative flex w-full items-center justify-between bg-neutral-100 py-4 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 "
       data-te-navbar-ref
     >
       <div className="flex w-full flex-wrap items-center justify-between px-6">
         <div
-          className="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+          className=" flex items-center justify-between gap-4"
           id="navbarSupportedContent1"
           data-te-collapse-item
         >
           <Link
-            className="mt-2 mr-2 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mt-0"
+            className=" mr-2 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
             to="/"
           >
             <img
@@ -30,7 +30,7 @@ const Navbar = () => {
           </Link>
           {/* Left links */}
           <ul
-            className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
+            className="list-style-none mr-auto flex pl-0 gap-4"
             data-te-navbar-nav-ref
           >
             <li className="lg:pr-2" data-te-nav-item-ref>

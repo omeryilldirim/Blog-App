@@ -14,13 +14,13 @@ const About = () => {
         />
         <h2 className="text-xl text-center text-red-700">mryldrm</h2>
         <div className="flex justify-center gap-2">
-          <Link className="hover:cursor-pointer">
+          <Link className="hover:cursor-pointer" to="https://www.linkedin.com/in/omer-yilldirim/" target="_blank">
             <FaLinkedin
               size="30px"
               className=" fill-slate-500 hover:fill-blue-600"
             />
           </Link>
-          <Link className="hover:cursor-pointer">
+          <Link className="hover:cursor-pointer" to="https://github.com/omeryilldirim" target="_blank">
             <FaGithub
               size="30px"
               className=" fill-slate-500 hover:fill-amber-600"

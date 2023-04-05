@@ -8,13 +8,15 @@ import CommentForm from "../components/blog/CommentForm";
 import { useSelector } from "react-redux";
 import useAxios from "../hooks/useAxios";
 import { toastErrorNotify } from "../helper/ToastNotify";
+import UpdateModal from "../components/blog/UpdateModal";
+import DeleteModal from "../components/blog/DeleteModal";
 
 const Detail = () => {
   const [showComments, setShowComments] = useState(false);
   const [blog, setBlog] = useState("");
   const { userID } = useSelector((state) => state.auth);
-  const { axiosWithToken } = useAxios();
   const { currentUser } = useSelector((state) => state.auth);
+  const { axiosWithToken } = useAxios();
   const {
     id,
     image,
@@ -122,18 +124,8 @@ const Detail = () => {
           </div>
           {currentUser === author && (
             <div className="flex justify-center space-x-2">
-              <button
-                type="button"
-                className="inline-block rounded bg-success px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#14a44d] transition duration-150 ease-in-out hover:bg-success-600 hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:bg-success-600 focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:outline-none focus:ring-0 active:bg-success-700 active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)]"
-              >
-                Update Blog
-              </button>
-              <button
-                type="button"
-                className="inline-block rounded bg-danger px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)]"
-              >
-                Delete Blog
-              </button>
+              <UpdateModal blog={blog} setBlog={setBlog}  />
+              <DeleteModal id={id}/>
             </div>
           )}
 

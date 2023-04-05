@@ -1,4 +1,4 @@
-import { ErrorMessage, Form, Formik } from "formik";
+import { ErrorMessage, Formik } from "formik";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { object, string } from "yup";
@@ -19,12 +19,13 @@ const NewBlog = () => {
 
   useEffect(() => {
     getCategories();
+    // eslint-disable-next-line
   }, []);
 
   return (
-    <section className="h-[90vh] flex items-center justify-center">
+    <section className="min-h-[90vh] flex items-center justify-center">
       <div className="container h-full ">
-        <div className="flex h-full flex-wrap items-start justify-center pt-8 ">
+        <div className="flex h-full flex-wrap items-start justify-center ">
           <div className="md:w-8/12 lg:w-5/12">
             <Formik
               initialValues={{

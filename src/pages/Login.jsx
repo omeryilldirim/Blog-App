@@ -2,7 +2,6 @@ import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuthCall from "../hooks/useAuthCall";
-import LoginForm from "../components/auth/LoginForm";
 
 const Login = () => {
   const {login} = useAuthCall()

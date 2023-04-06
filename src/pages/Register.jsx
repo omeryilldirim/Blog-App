@@ -88,7 +88,7 @@ const Register = () => {
                     />
                   </div>
                   {/* Email input */}
-                  <div className="relative mb-6" data-te-input-wrapper-init>
+                  <div className="relative mb-6" >
                   <label
                       htmlFor="email"
                       className="pointer-events-none p-1 max-w-[90%] text-primary dark:text-neutral-200 dark:peer-focus:text-neutral-200"
@@ -112,7 +112,7 @@ const Register = () => {
                     />
                   </div>
                   {/* Image input */}
-                  <div className="relative mb-6" data-te-input-wrapper-init>
+                  <div className="relative mb-6" >
                   <label
                       htmlFor="image"
                       className="pointer-events-none p-1 max-w-[90%] text-primary dark:text-neutral-200 dark:peer-focus:text-neutral-200"
@@ -137,7 +137,7 @@ const Register = () => {
                     />
                   </div>
                   {/* Bio input */}
-                  <div className="relative mb-6" data-te-input-wrapper-init>
+                  <div className="relative mb-6" >
                   <label
                       htmlFor="bio"
                       className="pointer-events-none p-1 max-w-[90%] text-primary dark:text-neutral-200 dark:peer-focus:text-neutral-200"
@@ -157,7 +157,7 @@ const Register = () => {
 
                   </div>
                   {/* Password input */}
-                  <div className="relative mb-6" data-te-input-wrapper-init>
+                  <div className="relative mb-6" >
                   <label
                       htmlFor="password"
                       className="pointer-events-none p-1 max-w-[90%] text-primary dark:text-neutral-200 dark:peer-focus:text-neutral-200"

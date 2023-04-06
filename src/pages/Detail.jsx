@@ -37,7 +37,7 @@ const Detail = () => {
   const hitLikeButton = async () => {
     try {
       await axiosWithToken.post(
-        `http://32253.fullstack.clarusway.com/api/likes/${id}/`
+        `https://32253.fullstack.clarusway.com/api/likes/${id}/`
       );
     } catch (error) {
       toastErrorNotify(error.message);

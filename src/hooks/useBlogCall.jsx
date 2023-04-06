@@ -13,7 +13,7 @@ import axios from "axios";
 const useBlogCall = () => {
   const dispatch = useDispatch();
   const { axiosWithToken } = useAxios();
-  const BASE_URL = "http://32253.fullstack.clarusway.com/api";
+  const BASE_URL = "https://32253.fullstack.clarusway.com/api";
 
   const getBlogs = async () => {
     dispatch(fetchStart());

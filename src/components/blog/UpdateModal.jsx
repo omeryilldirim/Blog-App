@@ -36,7 +36,7 @@ const UpdateModal = ({blog, setBlog}) => {
       </div>
       <div
         data-te-modal-init
-        className="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+        className="fixed top-[50px] left-0 z-[1055] hidden  w-full  outline-none"
         id="updateBlog"
         tabIndex={-1}
         aria-labelledby="updateBlogModal"
@@ -77,7 +77,7 @@ const UpdateModal = ({blog, setBlog}) => {
                 </svg>
               </button>
             </div>
-            <div className="relative p-4">
+            <div className="relative ">
               <Formik
                 initialValues={{
                   title,
@@ -206,7 +206,7 @@ const UpdateModal = ({blog, setBlog}) => {
                       </select>
                     </div>
                     {/* status input */}
-                    <div className="relative mb-6">
+                    <div className="relative mb-3">
                       <label
                         htmlFor="status"
                         className="pointer-events-none p-1 max-w-[90%] text-primary dark:text-neutral-200 dark:peer-focus:text-neutral-200"
@@ -237,7 +237,7 @@ const UpdateModal = ({blog, setBlog}) => {
 
                     {/* Submit button */}
 
-                    <div className="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+                    <div className="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 py-2 dark:border-opacity-50">
                       <button
                         type="button"
                         className="inline-block rounded bg-primary-100 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"

@@ -45,7 +45,7 @@ const Detail = () => {
   };
 
   useEffect(() => {
-    axiosWithToken(`http://32253.fullstack.clarusway.com/api/blogs/${blog_id}/`)
+    axiosWithToken(`https://32253.fullstack.clarusway.com/api/blogs/${blog_id}/`)
       .then((res) => setBlog(res.data))
       .catch((err) => toastErrorNotify(err.message));
   });

@@ -16,7 +16,7 @@ const useAuthCall = () => {
         const {data} = await axios.post(`${BASE_URL}users/auth/login/`, userInfo)
         dispatch(loginSuccess(data))
         toastSuccessNotify("Login performed")
-        navigate("/")
+        navigate("/Blog-App")
     } catch (error) {
         dispatch(fetchFail())
         toastErrorNotify("Login can not be performed")
@@ -31,7 +31,7 @@ const useAuthCall = () => {
       const {data} = await axios.post(`${BASE_URL}users/register/`, userInfo)
       dispatch(registerSuccess(data))
       toastSuccessNotify("Register performed")
-      navigate("/")
+      navigate("/Blog-App")
     } catch (error) {
       dispatch(fetchFail())
       toastErrorNotify("Register can not be performed")
@@ -46,7 +46,6 @@ const useAuthCall = () => {
       await axios.post(`${BASE_URL}users/auth/logout/`)
       dispatch(logoutSuccess())
       toastSuccessNotify("Logout performed")
-      navigate("/")
     } catch (err) {
       dispatch(fetchFail())
       toastErrorNotify("Logout can not be performed")

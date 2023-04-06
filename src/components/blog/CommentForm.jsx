@@ -6,13 +6,13 @@ const CommentForm = ({ id }) => {
   const { postComment } = useBlogCall();
   return (
     <form
-      className="flex justify-center w-full m-2"
+      className="flex justify-center w-full"
       onSubmit={(e) => {
         e.preventDefault();
         postComment(id, { post: id, content })
         setContent("")}}
     >
-      <div className="relative m-3 w-full flex flex-col gap-2 items-center">
+      <div className="relative  w-full flex flex-col gap-2 items-center">
 
         <textarea
           className="peer block min-h-[auto] w-full border-2 border-slate-300 rounded py-[0.32rem] px-3 leading-[1.6] outline-none"

@@ -52,10 +52,10 @@ const Detail = () => {
 
   return (
     <div className="min-h-[85vh]  flex justify-center shadow-2xl pt-5">
-      <div className="max-w-[1000px]">
+      <div className=" xs:max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
         <div className="flex justify-center">
           <img
-            className="max-w-[1000px] max-h-[500px]"
+            className="xs:max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl max-h-[500px]"
             src={image || ""}
             alt="blog"
           />
@@ -124,20 +124,21 @@ const Detail = () => {
           </div>
           {currentUser === author && (
             <div className="flex justify-center space-x-2">
-              <UpdateModal blog={blog} setBlog={setBlog}  />
-              <DeleteModal id={id}/>
+              <UpdateModal blog={blog} setBlog={setBlog} />
+              <DeleteModal id={id} />
             </div>
           )}
+          <div className="max-w-[500px] m-auto">
+            {showComments && (
+              <div>
+                {comments?.map((comment) => (
+                  <CommentCard key={comment.id} {...comment} />
+                ))}
+              </div>
+            )}
 
-          {showComments && (
-            <div>
-              {comments?.map((comment) => (
-                <CommentCard key={comment.id} {...comment} />
-              ))}
-            </div>
-          )}
-
-          {showComments && <CommentForm id={id} />}
+            {showComments && <CommentForm id={id} />}
+          </div>
         </div>
       </div>
     </div>

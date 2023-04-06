@@ -27,7 +27,7 @@ const Register = () => {
     <section className="min-h-[90vh] flex items-center justify-center">
       <div className="container h-full px-6 py-12 ">
         <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
-          <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
+          <div className=" md:mb-0 xs:w-8/12 lg:w-6/12">
             <img
               src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
               className="w-full"

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useBlogCall from "../../hooks/useBlogCall";
 
-const CommentForm = ({ id }) => {
+const CommentForm = ({ id, updateBlogInfo }) => {
   const [content, setContent] = useState("");
   const { postComment } = useBlogCall();
   return (
@@ -10,6 +10,7 @@ const CommentForm = ({ id }) => {
       onSubmit={(e) => {
         e.preventDefault();
         postComment(id, { post: id, content })
+        updateBlogInfo(id)
         setContent("")}}
     >
       <div className="relative  w-full flex flex-col gap-2 items-center">

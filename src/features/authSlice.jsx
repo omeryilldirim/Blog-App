@@ -44,7 +44,7 @@ const authSlice = createSlice({
       state.image = payload?.image;
       state.bio = payload?.bio;
       state.email = payload?.email;
-      state.userID = payload?.user?.id;
+      state.userID = payload?.id;
     },
     fetchFail: (state) => {
       state.loading = false;

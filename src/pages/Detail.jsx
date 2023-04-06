@@ -34,11 +34,18 @@ const Detail = () => {
 
   const liked = likes_n?.some((like) => like.user_id === userID);
 
+  const updateBlogInfo = async (id) => {
+    await axiosWithToken(`https://32253.fullstack.clarusway.com/api/blogs/${id}/`)
+      .then((res) => setBlog(res.data))
+      .catch((err) => toastErrorNotify(err.message));
+  };
+
   const hitLikeButton = async () => {
     try {
       await axiosWithToken.post(
         `https://32253.fullstack.clarusway.com/api/likes/${id}/`
       );
+      updateBlogInfo(blog_id);
     } catch (error) {
       toastErrorNotify(error.message);
     }
@@ -46,9 +53,10 @@ const Detail = () => {
 
   useEffect(() => {
     axiosWithToken(`https://32253.fullstack.clarusway.com/api/blogs/${blog_id}/`)
-      .then((res) => setBlog(res.data))
-      .catch((err) => toastErrorNotify(err.message));
-  });
+    .then((res) => setBlog(res.data))
+    .catch((err) => toastErrorNotify(err.message));
+    console.log("worked");
+  }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="min-h-[85vh]  flex justify-center shadow-2xl pt-5">
@@ -124,7 +132,7 @@ const Detail = () => {
           </div>
           {currentUser === author && (
             <div className="flex justify-center space-x-2">
-              <UpdateModal blog={blog} setBlog={setBlog} />
+              <UpdateModal blog={blog} setBlog={setBlog} updateBlogInfo={updateBlogInfo}/>
               <DeleteModal id={id} />
             </div>
           )}
@@ -137,7 +145,7 @@ const Detail = () => {
               </div>
             )}
 
-            {showComments && <CommentForm id={id} />}
+            {showComments && <CommentForm id={id} updateBlogInfo={updateBlogInfo} />}
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import useBlogCall from "../../hooks/useBlogCall";
 import { useSelector } from "react-redux";
 import { object, string } from "yup";
 
-const UpdateModal = ({blog, setBlog}) => {
+const UpdateModal = ({blog, setBlog, updateBlogInfo}) => {
   const { id, content, title, image, category, status } = blog
   const { getCategories, updateBlog } = useBlogCall();
   const { categories } = useSelector((state) => state.blog);
@@ -30,6 +30,7 @@ const UpdateModal = ({blog, setBlog}) => {
           data-te-target="#updateBlog"
           data-te-ripple-init
           data-te-ripple-color="light"
+          onClick={() => {updateBlogInfo(id)}}
         >
           Update Blog
         </button>
@@ -89,6 +90,7 @@ const UpdateModal = ({blog, setBlog}) => {
                 validationSchema={updateBlogScheme}
                 onSubmit={(values, actions) => {
                   updateBlog(id, values);
+                  updateBlogInfo(id)
                   setBlog({...blog, ...values})
                   actions.resetForm();
                   actions.setSubmitting(false);

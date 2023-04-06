@@ -10,7 +10,7 @@ const MyBlogs = () => {
   
   useEffect(() => {
     getMyBlogs(userID)
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
   
   return (
     <div className='flex min-h-[90vh] items-center justify-center gap-5 flex-wrap p-5'>

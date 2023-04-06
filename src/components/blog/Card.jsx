@@ -39,8 +39,8 @@ const Card = ({ blog }) => {
    const liked = likes_n.some((like) => like.user_id === userID);
   
   return (
-    <div className="flex justify-center shadow-2xl h-[500px]">
-      <div className="max-w-sm w-[400px] rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+    <div className="flex justify-center shadow-2xl h-[500px] rounded-xl">
+      <div className="max-w-sm w-[400px] rounded-xl bg-white shadow-xl dark:bg-neutral-700">
         <div className="flex justify-center">
           <div
             className="h-auto py-3"

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { AiFillHeart } from "react-icons/ai";
+import { AiFillHeart,AiOutlineEye  } from "react-icons/ai";
 import { BiCommentDetail } from "react-icons/bi";
-import { AiOutlineEye } from "react-icons/ai";
+import {FaChevronCircleDown, FaChevronCircleUp} from "react-icons/fa";
 import CommentCard from "../components/blog/CommentCard";
 import { useEffect, useState } from "react";
 import CommentForm from "../components/blog/CommentForm";
@@ -12,7 +12,7 @@ import UpdateModal from "../components/blog/UpdateModal";
 import DeleteModal from "../components/blog/DeleteModal";
 
 const Detail = () => {
-  const [showComments, setShowComments] = useState(false);
+  const [showComments, setShowComments] = useState(true);
   const [blog, setBlog] = useState("");
   const { userID } = useSelector((state) => state.auth);
   const { currentUser } = useSelector((state) => state.auth);
@@ -52,10 +52,7 @@ const Detail = () => {
   };
 
   useEffect(() => {
-    axiosWithToken(`https://32253.fullstack.clarusway.com/api/blogs/${blog_id}/`)
-    .then((res) => setBlog(res.data))
-    .catch((err) => toastErrorNotify(err.message));
-    console.log("worked");
+    updateBlogInfo(blog_id);
   }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
@@ -113,7 +110,7 @@ const Detail = () => {
               <span className="text-neutral-500 text-xl ">{likes}</span>
             </div>
             <div
-              className="flex items-center rounded-3xl hover:bg-slate-200 hover:cursor-pointer p-1 "
+              className="flex items-center rounded-3xl "
               onClick={() => setShowComments(!showComments)}
             >
               <BiCommentDetail
@@ -122,20 +119,20 @@ const Detail = () => {
               />
               <span className="text-neutral-500 text-lg">{comment_count}</span>
             </div>
-            <div className="flex items-center rounded-3xl hover:bg-slate-200 hover:cursor-pointer p-1">
+            <div className="flex items-center rounded-3xl p-1">
               <AiOutlineEye
                 className="inline-block  text-neutral-500"
                 size={"30px"}
               />
               <span className="text-neutral-500 text-lg">{post_views}</span>
             </div>
-          </div>
-          {currentUser === author && (
-            <div className="flex justify-center space-x-2">
-              <UpdateModal blog={blog} setBlog={setBlog} updateBlogInfo={updateBlogInfo}/>
-              <DeleteModal id={id} />
+            <div className="text-blue-400">
+              <button className="flex items-center gap-1 p-1 rounded-3xl hover:bg-slate-200" onClick={()=>setShowComments(!showComments)}>
+                Comments {showComments ? <FaChevronCircleUp/> :<FaChevronCircleDown/>}
+              </button>
             </div>
-          )}
+          </div>
+
           <div className="max-w-[500px] m-auto">
             {showComments && (
               <div>
@@ -147,6 +144,12 @@ const Detail = () => {
 
             {showComments && <CommentForm id={id} updateBlogInfo={updateBlogInfo} />}
           </div>
+          {currentUser === author && (
+            <div className="flex justify-center space-x-2 mt-5">
+              <UpdateModal blog={blog} setBlog={setBlog} updateBlogInfo={updateBlogInfo}/>
+              <DeleteModal id={id} />
+            </div>
+          )}
         </div>
       </div>
     </div>

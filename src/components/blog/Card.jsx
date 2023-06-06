@@ -4,7 +4,7 @@ import { BiCommentDetail } from "react-icons/bi";
 import { AiOutlineEye } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import useAxios from "../../hooks/useAxios";
-import { toastErrorNotify } from "../../helper/ToastNotify";
+import { toastErrorNotify, toastWarnNotify } from "../../helper/ToastNotify";
 import useBlogCall from "../../hooks/useBlogCall";
 import { useSelector } from "react-redux";
 
@@ -27,14 +27,19 @@ const Card = ({ blog }) => {
   } = blog;
 
   const hitLikeButton = async () => {
-    try {
-      await axiosWithToken.post(
-        `https://32253.fullstack.clarusway.com/api/likes/${id}/`
-      );
-      getBlogs()
-    } catch (error) {
-      toastErrorNotify(error.message);
-    }
+    if (userID){
+      try {
+        await axiosWithToken.post(
+          `https://32253.fullstack.clarusway.com/api/likes/${id}/`
+        );
+        getBlogs()
+      } catch (error) {
+        toastErrorNotify(error.message);
+      }
+    } else{
+      toastWarnNotify("You need to login to like a post!");
+    }  
+
   };
    const liked = likes_n.some((like) => like.user_id === userID);
   
@@ -49,7 +54,7 @@ const Card = ({ blog }) => {
             data-te-ripple-color="light"
           >
             <img
-              className="h-[100px] hover:cursor-pointer hover:scale-[1.05] transition duration-100 ease-in-out"
+              className="h-[100px] hover:cursor-pointer hover:scale-[1.05] transition duration-300 ease-in-out"
               src={image}
               alt="blog"
             />
@@ -60,7 +65,7 @@ const Card = ({ blog }) => {
             {title}
           </h5>
           <p className="h-[155px] overflow-auto mb-4 text-base text-neutral-600 dark:text-neutral-200">
-            {content}
+            {userID ? content.slice(0, 350) + "..." : content.slice(0, 200) + "..."}
           </p>
           <p className="mb-3 text-base text-neutral-600 dark:text-neutral-200">
             {new Date(publish_date).getDate() +
@@ -98,10 +103,11 @@ const Card = ({ blog }) => {
               <BiCommentDetail
                 className="inline-block  text-neutral-400"
                 size={"25px"}
+                onClick={() => navigate(`/detail/${id}`, { state: { blog } })}
               />
               <span className="text-neutral-400 text-md">{comment_count}</span>
             </div>
-            <div className="rounded-3xl hover:bg-slate-200 hover:cursor-pointer p-1">
+            <div className="rounded-3xl p-1">
               <AiOutlineEye
                 className="inline-block  text-neutral-400"
                 size={"25px"}

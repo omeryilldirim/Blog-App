@@ -7,9 +7,9 @@ const CommentForm = ({ id, updateBlogInfo }) => {
   return (
     <form
       className="flex justify-center w-full"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        postComment(id, { post: id, content })
+        await postComment(id, { post: id, content })
         updateBlogInfo(id)
         setContent("")}}
     >

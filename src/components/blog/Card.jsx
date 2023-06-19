@@ -12,7 +12,7 @@ const Card = ({ blog }) => {
   const navigate = useNavigate();
   const { axiosWithToken } = useAxios();
   const {userID} = useSelector((state) => state.auth);
-  const { getBlogs } = useBlogCall();
+  const { getBlogs, getMyBlogs } = useBlogCall();
   const {
     id,
     title,
@@ -33,6 +33,7 @@ const Card = ({ blog }) => {
           `https://32253.fullstack.clarusway.com/api/likes/${id}/`
         );
         getBlogs()
+        getMyBlogs(userID) // to get the latest data of like button
       } catch (error) {
         toastErrorNotify(error.message);
       }

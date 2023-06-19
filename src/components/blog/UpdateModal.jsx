@@ -10,7 +10,7 @@ const UpdateModal = ({blog, setBlog, updateBlogInfo}) => {
   const { categories } = useSelector((state) => state.blog);
   const updateBlogScheme = object().shape({
     title: string().required().max(50),
-    content: string().max(400).required(),
+    content: string().max(1000).required(),
     image: string().url().required(),
     category: string().required(),
     status: string().required(),
@@ -30,7 +30,7 @@ const UpdateModal = ({blog, setBlog, updateBlogInfo}) => {
           data-te-target="#updateBlog"
           data-te-ripple-init
           data-te-ripple-color="light"
-          onClick={() => {updateBlogInfo(id)}}
+          
         >
           Update Blog
         </button>
@@ -88,9 +88,9 @@ const UpdateModal = ({blog, setBlog, updateBlogInfo}) => {
                   status,
                 }}
                 validationSchema={updateBlogScheme}
-                onSubmit={(values, actions) => {
-                  updateBlog(id, values);
-                  updateBlogInfo(id)
+                onSubmit={async (values, actions) => {
+                  await updateBlog(id, values);
+                  await updateBlogInfo(id)
                   setBlog({...blog, ...values})
                   actions.resetForm();
                   actions.setSubmitting(false);

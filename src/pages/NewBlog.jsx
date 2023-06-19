@@ -11,7 +11,7 @@ const NewBlog = () => {
   const navigate = useNavigate();
   const postBlogScheme = object().shape({
     title: string().required().max(50),
-    content: string().max(400).required(),
+    content: string().max(1000).required(),
     image: string().url().required(),
     category: string().required(),
     status: string().required(),

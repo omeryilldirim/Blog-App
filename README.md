@@ -2,7 +2,7 @@
 
 ## Description
 
-Built a Blog App which requires user login and you can read blogs, . You can use the account information below or you can create your own account.
+Built an interactive Blog App. User login is required to publish a new blog, read more about the blogs or hit the like button for any blog. Users can save their drafts and preview their content on their profile.This app also allows users to comment on the blog page. You can use the account information below or you can create your own account.
 
 ```
 email: admin@gmail.com

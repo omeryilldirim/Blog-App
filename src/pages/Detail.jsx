@@ -58,7 +58,7 @@ const Detail = () => {
   }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="min-h-[85vh]  flex justify-center shadow-2xl pt-5">
+    <div className="min-h-[calc(100vh-136px)]  flex justify-center shadow-2xl pt-5">
       <div className=" xs:max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
         <div className="flex justify-center">
           <img

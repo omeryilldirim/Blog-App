@@ -23,7 +23,7 @@ const NewBlog = () => {
   }, []);
 
   return (
-    <section className="min-h-[90vh] flex items-center justify-center">
+    <section className="min-h-[calc(100vh-136px)] flex items-center justify-center">
       <div className="container h-full ">
         <div className="flex h-full flex-wrap items-start justify-center ">
           <div className="md:w-8/12 lg:w-5/12">

@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="min-h-[90vh] flex flex-col items-center justify-start shadow-2xl pt-6">
+    <div className="min-h-[calc(100vh-136px)] flex flex-col items-center justify-start shadow-2xl pt-6">
       <div className="flex flex-col items-center justify-start gap-3 p-6 shadow-2xl rounded-xl bg-blue-100">
         <img
-          src="https://www.loppy.ro/wp-content/uploads/2022/10/avatar.png"
+          src="https://www.loppy.ro/wp-content/uploads/2022/10/avtar.png"
           alt="profile"
         />
         <h2 className="text-xl text-center text-red-700">mryldrm</h2>

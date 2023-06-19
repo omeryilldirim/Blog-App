@@ -13,7 +13,7 @@ const MyBlogs = () => {
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
   
   return (
-    <div className='flex min-h-[90vh] items-center justify-center gap-5 flex-wrap p-5'>
+    <div className='flex min-h-[calc(100vh-136px)] items-center justify-center gap-5 flex-wrap p-5'>
     {myBlogs?.map((blog) => (
       <Card key={blog.id} blog={blog}/>))}
   </div>

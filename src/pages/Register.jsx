@@ -24,7 +24,7 @@ const Register = () => {
       ),
   });
   return (
-    <section className="min-h-[90vh] flex items-center justify-center">
+    <section className="min-h-[calc(100vh-136px)] flex items-center justify-center">
       <div className="container h-full px-6 py-12 ">
         <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
           <div className=" md:mb-0 xs:w-8/12 lg:w-6/12">

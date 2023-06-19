@@ -11,7 +11,7 @@ const Login = () => {
     login({ email, password });
   };
   return (
-    <section className="min-h-[90vh] flex items-center justify-center">
+    <section className="min-h-[calc(100vh-136px)] flex items-center justify-center">
       <div className="h-full px-12 text-neutral-800 dark:text-neutral-200">
         <div className="g-6 px-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
           <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">

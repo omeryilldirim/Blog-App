@@ -41,7 +41,7 @@ const Card = ({ blog }) => {
     }  
 
   };
-   const liked = likes_n.some((like) => like.user_id === userID);
+  const liked = likes_n.some((like) => like.user_id === userID);
   
   return (
     <div className="flex justify-center shadow-2xl h-[500px] rounded-xl">

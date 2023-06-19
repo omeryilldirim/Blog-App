@@ -37,7 +37,6 @@ const Detail = () => {
   const updateBlogInfo = async (id) => {
     await axiosWithToken(`https://32253.fullstack.clarusway.com/api/blogs/${id}/`)
       .then((res) => {
-        console.log(res.data);
         setBlog(res.data)})
       .catch((err) => toastErrorNotify(err.message));
   };

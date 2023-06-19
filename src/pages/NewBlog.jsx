@@ -23,7 +23,7 @@ const NewBlog = () => {
   }, []);
 
   return (
-    <section className="min-h-[calc(100vh-136px)] flex items-center justify-center">
+    <section className="min-h-[calc(100vh-136px)] flex items-center justify-center dark:bg-slate-500">
       <div className="container h-full ">
         <div className="flex h-full flex-wrap items-start justify-center ">
           <div className="md:w-8/12 lg:w-5/12">
@@ -66,7 +66,7 @@ const NewBlog = () => {
                     </label>
                     <input
                       type="text"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="title"
                       name="title"
                       value={values?.title || ""}
@@ -91,7 +91,7 @@ const NewBlog = () => {
                     </label>
                     <textarea rows={3}
                       type="text"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="content"
                       name="content"
                       value={values?.content || ""}
@@ -115,7 +115,7 @@ const NewBlog = () => {
                     </label>
                     <input
                       type="url"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="image"
                       name="image"
                       value={values?.image || ""}
@@ -139,7 +139,7 @@ const NewBlog = () => {
                       Category
                     </label>
                     <select data-te-select-init
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.7rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.7rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="category"
                       name="category"
                       value={values?.category || ""}
@@ -167,7 +167,7 @@ const NewBlog = () => {
                     </label>
                     <select data-te-select-init
                       data-te-select-size="lg"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.7rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      className="peer block min-h-[auto] w-full rounded border-0 bg-blue-100 py-[0.7rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="status"
                       name="status"
                       value={values?.status || ""}

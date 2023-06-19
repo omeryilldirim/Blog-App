@@ -58,7 +58,7 @@ const Detail = () => {
   }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="min-h-[calc(100vh-136px)]  flex justify-center shadow-2xl pt-5">
+    <div className="min-h-[calc(100vh-136px)]  flex justify-center shadow-2xl pt-5 dark:bg-slate-500">
       <div className=" xs:max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
         <div className="flex justify-center">
           <img
@@ -101,32 +101,32 @@ const Detail = () => {
 
           <div className="flex items-center justify-start gap-2 mb-3">
             <div
-              className="flex items-center rounded-3xl hover:bg-slate-200 hover:cursor-pointer p-1 "
+              className="flex items-center  "
               onClick={hitLikeButton}
             >
               <AiFillHeart
-                className="inline-block text-neutral-500 mr-1"
-                size={"30px"}
+                className="inline-block mr-1 px-0.5 rounded-3xl hover:bg-slate-200 hover:cursor-pointer"
+                size={"33px"}
                 fill={liked ? "red" : "gray"}
               />
-              <span className="text-neutral-500 text-xl ">{likes}</span>
+              <span className="text-neutral-500 dark:text-neutral-200 hover:text-black text-xl">{likes}</span>
             </div>
             <div
-              className="flex items-center rounded-3xl "
+              className="flex items-center "
               onClick={() => setShowComments(!showComments)}
             >
               <BiCommentDetail
-                className="inline-block  text-neutral-500 mr-1"
-                size={"30px"}
+                className="inline-block dark:text-neutral-400 text-neutral-500 mr-1"
+                size={"28px"}
               />
-              <span className="text-neutral-500 text-lg">{comment_count}</span>
+              <span className="text-neutral-500 dark:text-neutral-200 text-lg">{comment_count}</span>
             </div>
-            <div className="flex items-center rounded-3xl p-1">
+            <div className="flex items-center">
               <AiOutlineEye
-                className="inline-block  text-neutral-500"
+                className="inline-block text-neutral-500 dark:text-neutral-400"
                 size={"30px"}
               />
-              <span className="text-neutral-500 text-lg">{post_views}</span>
+              <span className="text-neutral-500 dark:text-neutral-200 text-lg">{post_views}</span>
             </div>
             <div className="text-blue-400">
               <button className="flex items-center gap-1 p-1 rounded-3xl hover:bg-slate-200" onClick={()=>setShowComments(!showComments)}>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useAuthCall from "../hooks/useAuthCall";
 import { useSelector } from "react-redux";
+import Switch from "./Switch";
 
 const Navbar = () => {
   const { logout } = useAuthCall();
@@ -65,6 +66,7 @@ const Navbar = () => {
         {/* Collapsible wrapper */}
         {/* Right elements */}
         <div className="relative flex items-center">
+          <Switch />
           <div className="relative" data-te-dropdown-ref>
             <Link
               className="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"

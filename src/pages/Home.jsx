@@ -12,7 +12,7 @@ const Home = () => {
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
   
   return (
-    <div className='flex min-h-[calc(100vh-136px)] items-center justify-center gap-5 flex-wrap p-5'>
+    <div className='flex min-h-[calc(100vh-136px)] items-center justify-center gap-5 flex-wrap p-5 dark:bg-slate-500'>
       {blogs?.map((blog) => (
         <Card key={blog.id} blog={blog}/>))}
     </div>

@@ -13,7 +13,7 @@ password: Abcd1234*
 - React, Redux TK and persist, JS, Tailwind, Toastify, Tw-elements, Formik, Yup.
 ## Outcome
 
-![Project Snapshot](./src/assets/snapshot.gif/)
+![Project Snapshot](snapshot.gif)
 ## Project Skeleton
 
 ```
